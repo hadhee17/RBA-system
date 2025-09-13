@@ -1,10 +1,13 @@
 const express = require("express");
 const dataController = require("../controller.js/dataController");
+const userController = require("../controller.js/authController");
 const router = express.Router();
 
-router.patch("/updatePosts/:id", dataController.updatePost);
-router.delete("/deletePosts/:id", dataController.deletePost);
-router.post("/addPosts", dataController.createPost);
-router.get("/getPosts", dataController.getPost);
+router.post(
+  "/addPosts",
+
+  userController.restrictTo("user"),
+  dataController.createPost
+);
 
 module.exports = router;

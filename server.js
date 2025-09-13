@@ -2,6 +2,7 @@ const connectDB = require("./config/DB");
 const express = require("express");
 
 const route = require("./routes/dataRoute");
+const userRoute = require("./routes/userRoute");
 const app = express();
 //connect Database
 
@@ -9,6 +10,7 @@ app.use(express.json());
 connectDB();
 
 app.use("/api", route);
+app.use("/api/users", userRoute);
 
 //error handling middleware for unhandled routes
 app.all("*all", (req, res, next) => {
