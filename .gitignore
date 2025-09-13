@@ -1,6 +1,7 @@
 node_modules
 dist
 .env
-model/dataShema
-controller/dataShema
-screenshot
+/model/dataSchema.js
+
+/controller/dataController.js
+sreenshot

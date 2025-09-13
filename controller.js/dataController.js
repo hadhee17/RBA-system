@@ -1,4 +1,4 @@
-const Model = require("../model/dataShema");
+const Model = require("../model/dataSchema");
 
 //create a post
 exports.createPost = async (req, res, next) => {
